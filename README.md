@@ -1,6 +1,6 @@
 # SIRe-IR: Inverse Rendering for BRDF Reconstruction with Shadow and Illumination Removal in High-Illuminance Scenes
 
-## [Project page (Coming Soon...)](https://ingra14m.github.io/Deformable-3D-Gaussians.github.io/) | [Paper](https://arxiv.org/abs/2310.13030) 
+## [Project page (Coming Soon...)](https://ingra14m.github.io/Deformable-3D-Gaussians.github.io/) | [Paper](https://arxiv.org/abs/2310.13030) | [Synthetic Data](https://drive.google.com/drive/folders/1maQVCc7xTxv9NYmWxLFT3bu0M9J4XhK0?usp=sharing) | [Real Data](https://www.dropbox.com/sh/w0y8bbdmxzik3uk/AAAaZffBiJevxQzRskoOYcyja?dl=0)
 
 <img src="assets/teaser.png" alt="image-20231020012408139" style="zoom:50%;" />
 
