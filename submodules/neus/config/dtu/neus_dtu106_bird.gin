@@ -1,0 +1,46 @@
+include "config/render.gin"
+include "config/env.gin"
+
+Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
+Data.dataset_dir = r"/home/cad3062/yzy/data/neus/data_DTU/dtu_scan106"
+Data.spherify = True
+
+Data.batch_size = 1024
+Data.batching = 'all_images'
+Data.alpha_as_mask = True
+Data.version = 'neus'
+
+Log.log_dir = "logs"
+Log.render_every = 5000
+
+# scene size is in (-3.14, 3.14), set bbox as 4
+Hash.bbox = 4
+
+Data.batch_size = 512                                      # override batch-size
+render_image.chunk = 1024
+
+# progressive training, this is copy from nerfies
+
+ANNEALED_WARP_ALPHA_SCHEDULE = {
+  'type': 'linear',
+  'initial_value': 5.0,
+  'final_value': 10,
+  'num_steps': 50000,
+}
+
+# PE.schedule = %ANNEALED_WARP_ALPHA_SCHEDULE
+
+render_neus.n_outside = 0
+NeuSModel.outside = False
+HashNeuS.outside = False
+NeuSModel.hashing = False
+
+Trainer.reg_dict = {
+    "eikonal" : 0.1,
+    "silhouette" : 1.0,
+}
+
+Trainer.model_class = @NeuSModel
+Trainer.render = "neus"
+
+Log.exp_name = "dtu106-bird-neus"

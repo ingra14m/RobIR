@@ -1,0 +1,29 @@
+Data.dataset_loader = 'blender'
+Data.dataset_dir = 'G:\\Repository\\nerf-pytorch\\data\\nerf_synthetic\\lego'
+Data.batch_size = 256
+Data.batching = 'single_image'
+# Data.version = 'neus'
+
+NeuSModel.sdf_dim = 1
+# NeuSModel.mode = 'no_normal'
+
+# Render.density_activation = @F.relu
+# Render.density_bias = 0.0
+# Render.white_bkgd = True
+# Render.use_mip = False
+# Render.density_proc = True
+Render.use_neus_model = True
+
+# DensityProcess.use_similarity = False
+# DensityProcess.use_sdf = True
+
+eikonal_reg.gamma = 0.1
+
+Train.model_class = @NeuSModel
+
+Log.log_dir = "logs"
+Log.exp_name = "lego-neus-4chan3"
+Log.render_every = 5000
+
+render_image.chunk = 1024
+

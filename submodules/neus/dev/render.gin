@@ -1,0 +1,2 @@
+Data.dataset_loader = 'blender'
+Data.dataset_dir = 'G:\\Repository\\nerf-pytorch\\data\\nerf_synthetic\\lego'

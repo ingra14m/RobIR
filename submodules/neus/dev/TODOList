@@ -1,0 +1,20 @@
+实验
+1. Model里默认Naive Version，别改了，Render里默认Mip采样，别改了，只有Raw2Out的部分可以改（默认Mip的）(√)
+2. 实验原始NeRF、MipNeRF、HashNeRF（两种密度表示），存在根目录下的logs里（已经ignore了）(√)(√)
+
+360
+1. Parameterize，fields的一部分（?）
+2. proposal，volume_rendering和sampler的一部分
+3. distortion_loss，regularization的一部分，这个要好好思考怎么写，因为需要结合模型（tv loss）和体渲染（weights）
+
+日志
+1. 输出测试PSNR（各项和平均），test_every(√)
+2. 生成视频（手动），同时统计指标(√)
+3. 可视化生成normal等数据
+4. 测试的时候，根据global_step跳过之前用过的测试用例(√)
+
+
+重构
+1. 只剩dataset.mip_dataset里还用到dev.misc.utils了（以及用于比对的train脚本），其他地方的dev都去掉了
+2.
+

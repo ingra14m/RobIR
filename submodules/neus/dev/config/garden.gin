@@ -1,0 +1,26 @@
+Data.dataset_loader = 'llff'
+Data.dataset_dir = 'G:\\Data\\NeRF360\\360_v2\\garden'
+Data.batch_size = 1024
+Data.batching = 'single_image'
+Data.factor = 8
+Data.near = 0.1
+Data.far = 200.
+
+# VNeRF.use_sh = True
+# VNeRF.encoder = @Hash
+MipNeRF.contract = True
+
+Render.density_activation = @F.relu
+Render.density_bias = 0.0
+Render.white_bkgd = False
+Render.use_mip = True
+# Render.density_proc = True
+
+Train.lr_delay_steps = 100
+Train.model_class = @MipNeRF
+
+Log.log_dir = "logs"
+Log.exp_name = "garden-mip360"
+Log.render_every = 5000
+
+

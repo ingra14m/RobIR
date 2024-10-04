@@ -1,0 +1,26 @@
+Data.dataset_loader = 'blender'
+Data.dataset_dir = 'G:\\Repository\\nerf-pytorch\\data\\nerf_synthetic\\lego'
+Data.batch_size = 1024
+Data.batching = 'single_image'
+
+MLP.cond_net_depth = 2
+
+# VNeRF.use_sh = True
+# VNeRF.encoder = @Hash
+VNeRF.naive_version = True
+MipNeRF.naive_version = True
+
+Render.density_activation = @F.relu
+Render.density_bias = 0.0
+Render.white_bkgd = True
+Render.naive_version = False
+
+Train.lr_delay_steps = 100
+Train.lr_init = 9e-4
+Train.use_mip = True
+
+Log.log_dir = "dev/logs"
+Log.exp_name = "mipnerf"
+Log.render_every = 5000
+
+

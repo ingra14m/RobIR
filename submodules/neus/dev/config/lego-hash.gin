@@ -1,0 +1,30 @@
+Data.dataset_loader = 'blender'
+Data.dataset_dir = 'G:\\Repository\\nerf-pytorch\\data\\nerf_synthetic\\lego'
+Data.batch_size = 1024
+Data.batching = 'single_image'
+Data.version = 'neus'
+
+Hash.n_features = 8
+
+# VNeRF.use_sh = True
+# VNeRF.alpha_dim = 1
+HashNeRF.use_sh = True
+
+Render.density_activation = @F.relu
+Render.density_bias = 0.0
+Render.white_bkgd = True
+Render.use_mip = False
+# Render.density_proc = True
+# DensityProcess.use_similarity = False
+# DensityProcess.use_sdf = True
+
+# eikonal_reg.gamma = 0.0001
+
+# Train.grad_max_norm = 0.001
+Train.model_class = @HashNeRF
+
+Log.log_dir = "logs"
+Log.exp_name = "lego-hash-neusdata"
+Log.render_every = 5000
+
+

@@ -1,0 +1,8 @@
+PE.num_freq = 5
+Grid.out_dim = 17
+IPE.max_deg = 10
+Hash.n_features = 8
+
+MLP.net_depth = 7
+MLP.skip_layer = 2
+MLP.use_cond = False

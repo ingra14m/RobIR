@@ -1,0 +1,13 @@
+# the original density activation in mip-nerf does not work, I don't know why.
+density_process.density_activation = @F.relu
+density_process.density_bias = 0.0
+density_process.white_bkgd = True
+similarity_process.white_bkgd = True
+
+# mip renderer, this implementation is copy from mip-NeRF
+render_mip.mode = 'mip'     # 'mip', 'sim'(deprecated) or 'sdf'
+render_mip.n_levels = 4
+
+# neus renderer, this implementation is copy from NeuS
+render_neus.n_outside = 0       # no background model
+
