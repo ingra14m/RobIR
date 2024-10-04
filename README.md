@@ -1,6 +1,6 @@
 # RobIR: Robust Inverse Rendering for High-Illumination Scenes
 
-## [Project page](https://ingra14m.github.io/RobIR_website) | [Paper](https://arxiv.org/abs/2310.13030) | [Synthetic Data](https://drive.google.com/drive/folders/1maQVCc7xTxv9NYmWxLFT3bu0M9J4XhK0?usp=sharing) | [Real Data](https://www.dropbox.com/sh/w0y8bbdmxzik3uk/AAAaZffBiJevxQzRskoOYcyja?dl=0)
+## [Project page](https://ingra14m.github.io/RobIR_website) | [Paper](https://arxiv.org/abs/2310.13030) | [Data](https://drive.google.com/drive/folders/1maQVCc7xTxv9NYmWxLFT3bu0M9J4XhK0?usp=sharing)
 
 
 
@@ -11,7 +11,34 @@
 
 
 
-## Preparation
+## Dataset
+
+In our paper, we use:
+
+- synthetic dataset from [NeRF](https://www.albertpumarola.com/research/D-NeRF/index.html) and our [RobIR dataset](https://drive.google.com/drive/folders/1maQVCc7xTxv9NYmWxLFT3bu0M9J4XhK0?usp=sharing).
+- real-world dataset from [NeuS](https://www.dropbox.com/sh/w0y8bbdmxzik3uk/AAAaZffBiJevxQzRskoOYcyja?dl=0).
+
+We organize the datasets as follows:
+
+```
+├── data
+│   | nerf 
+│     ├── hotdog
+│     ├── lego 
+│     ├── ...
+│   | robir_dataset
+│     ├── truck
+│     ├── chessboard
+│     ├── ...
+│   | neus
+│     ├── bear
+│     ├── sculpture
+│     ├── ...
+```
+
+## Run
+
+### Environment
 
 - Set up the Python environment
 
@@ -25,6 +52,54 @@ pip install -r requirement.txt
 ```
 
 
+
+### Train
+
+#### Stage 1: NeuS (Geometry Prior)
+
+
+
+#### Stage 2: BRDF Estimation
+
+**2.1 Train Norm**
+
+```shell
+python training/exp_runner.py 
+          --conf confs_sg/hotdog.conf
+          --data_split_dir data/hotdog
+          --expname hotdog
+          --trainstage Norm
+```
+
+**2.2 Train Visibility and Indirect Illumination**
+
+```shell
+python training/exp_runner.py 
+          --conf confs_sg/hotdog.conf
+          --data_split_dir data/hotdog
+          --expname hotdog
+          --trainstage Vis
+```
+
+**2.3 Train PBR**
+
+```shell
+python training/exp_runner.py 
+          --conf confs_sg/hotdog.conf
+          --data_split_dir data/hotdog
+          --expname hotdog
+          --trainstage PBR
+```
+
+**2.4 Train Reg-Estim**
+
+```shell
+python training/exp_runner.py 
+          --conf confs_sg/hotdog.conf
+          --data_split_dir data/hotdog
+          --expname hotdog
+          --trainstage CESR
+```
 
 
 
