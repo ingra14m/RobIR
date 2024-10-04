@@ -57,6 +57,10 @@ pip install -r requirement.txt
 
 #### Stage 1: NeuS (Geometry Prior)
 
+```shell
+python neus/exp_runner.py --gin_file neus/config/neus-hash.gin
+```
+
 
 
 #### Stage 2: BRDF Estimation
