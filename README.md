@@ -129,6 +129,10 @@ python training/exp_runner.py
 
 <img src="assets/deshadow.png" alt="image-20231020012659356" style="zoom:50%;" />
 
+## Acknowledgments
+
+This work was supported by Key R\&D Program of Zhejiang (No.2024C01069). We thank Wenxin Sun for her help in pipeline illustration. We also thank Yuan Liu and Wen Zhou for the constructive suggestions. 
+
 ## BibTex
 
 ```
