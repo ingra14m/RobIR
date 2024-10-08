@@ -1,8 +1,6 @@
 GPUtil
 argparse
 numpy
-#torch
-#torchvision
 pillow
 imageio
 imageio-ffmpeg
@@ -24,6 +22,5 @@ addict
 scikit-image
 absl-py
 icecream
-PyMCubes
+PyMCubes==0.1.4
 pyyaml
-#json

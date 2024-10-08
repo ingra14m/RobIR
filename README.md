@@ -43,19 +43,17 @@ We organize the datasets as follows:
 - Set up the Python environment
 
 ```shell
-conda create -n sire-env python=3.7
+conda create -n robust-ir-env python=3.7
 conda activate robust-ir-env
 
-pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.13.0+cu116.html
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 
 
-### Train
-
-#### Stage 1: NeuS (Geometry Prior)
+### Stage 1: NeuS (Geometry Prior)
 
 ```shell
 python neus/exp_runner.py --gin_file neus/config/neus-hash.gin
@@ -63,7 +61,7 @@ python neus/exp_runner.py --gin_file neus/config/neus-hash.gin
 
 
 
-#### Stage 2: BRDF Estimation
+### Stage 2: BRDF Estimation
 
 **2.1 Train Norm**
 
