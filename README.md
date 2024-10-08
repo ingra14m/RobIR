@@ -65,34 +65,45 @@ pip install -r requirements.txt
 ```shell
 cd neus
 python exp_runner.py --gin_file config/blender.gin  # for blender dataset
+python exp_runner.py --gin_file config/blendedMVS/neus_bear.gin  # for blendedMVS dataset
+python exp_runner.py --gin_file config/dtu/neus_dtu83_toy.gin  # for dtu dataset
 ```
+
+The mesh and other useful settings are saved in `logs`.
 
 
 
 ### Stage 2: BRDF Estimation
 
+- We provide `confs_sg/hotdog.conf` for general blender scenes and `confs_sg/truck.conf` for the `truck` in our robir dataset.
+- We also provide `confs_sg/dtu.conf` for general real-world scenes.
+
+If you wanna train other scenes, please change the config files, `neus_pretrained_path`, `data_split_dir` and `exp_name`.
+
+Here we take the blender scene `hotdog` as an example.
+
 **2.1 Train Norm**
 
 ```shell
-PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/hotdog --expname hotdog --trainstage Norm
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/nerf/hotdog --expname hotdog --trainstage Norm
 ```
 
 **2.2 Train Visibility and Indirect Illumination**
 
 ```shell
-PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage Vis
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/nerf/hotdog --expname hotdog --trainstage Vis
 ```
 
 **2.3 Train PBR**
 
 ```shell
-PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage PBR
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/nerf/hotdog --expname hotdog --trainstage PBR
 ```
 
-**2.4 Train Reg-Estim**
+**2.4 Train RVE**
 
 ```shell
-PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage CESR
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/nerf/hotdog --expname hotdog --trainstage CESR
 ```
 
 
@@ -117,7 +128,7 @@ PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_sp
 
 ### De-shadow
 
-<img src="assets/deshadow.png" alt="image-20231020012659356" style="zoom:50%;" />
+See more in the [project page](https://ingra14m.github.io/RobIR_website).
 
 ## Acknowledgments
 
