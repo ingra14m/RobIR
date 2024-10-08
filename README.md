@@ -144,3 +144,5 @@ This work was supported by Key R\&D Program of Zhejiang (No.2024C01069). We than
     year={2023}
 }
 ```
+
+This work was built on [InvRender](https://zju3dv.github.io/invrender/) and [NeuS](https://lingjie0206.github.io/papers/NeuS/). Please consider citing these two awesome works.
