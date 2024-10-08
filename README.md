@@ -43,6 +43,9 @@ We organize the datasets as follows:
 - Set up the Python environment
 
 ```shell
+git clone https://github.com/ingra14m/RobIR
+cd RobIR
+
 conda create -n robust-ir-env python=3.7
 conda activate robust-ir-env
 
@@ -56,7 +59,8 @@ pip install -r requirements.txt
 ### Stage 1: NeuS (Geometry Prior)
 
 ```shell
-python neus/exp_runner.py --gin_file neus/config/neus-hash.gin
+cd neus
+python exp_runner.py --gin_file config/blender.gin
 ```
 
 
@@ -66,31 +70,19 @@ python neus/exp_runner.py --gin_file neus/config/neus-hash.gin
 **2.1 Train Norm**
 
 ```shell
-python training/exp_runner.py 
-          --conf confs_sg/hotdog.conf
-          --data_split_dir data/hotdog
-          --expname hotdog
-          --trainstage Norm
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage Norm
 ```
 
 **2.2 Train Visibility and Indirect Illumination**
 
 ```shell
-python training/exp_runner.py 
-          --conf confs_sg/hotdog.conf
-          --data_split_dir data/hotdog
-          --expname hotdog
-          --trainstage Vis
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage Vis
 ```
 
 **2.3 Train PBR**
 
 ```shell
-python training/exp_runner.py 
-          --conf confs_sg/hotdog.conf
-          --data_split_dir data/hotdog
-          --expname hotdog
-          --trainstage PBR
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage PBR
 ```
 
 **2.4 Train Reg-Estim**
