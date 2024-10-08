@@ -70,7 +70,7 @@ python exp_runner.py --gin_file config/blender.gin
 **2.1 Train Norm**
 
 ```shell
-PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage Norm
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --neus_pretrained_path neus/logs/blender/hotdog-neus --data_split_dir data/hotdog --expname hotdog --trainstage Norm
 ```
 
 **2.2 Train Visibility and Indirect Illumination**

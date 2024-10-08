@@ -1,8 +1,7 @@
 include "config/render.gin"
-include "config/env.gin"
 
 Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
-Data.dataset_dir = r"/home/cad3062/yzy/data/neus/data_DTU/dtu_scan118"
+Data.dataset_dir = r"your/path/to/data_DTU/dtu_scan118"  # your own path
 Data.spherify = True
 
 Data.batch_size = 1024
@@ -11,7 +10,8 @@ Data.alpha_as_mask = True
 Data.version = 'neus'
 
 Log.log_dir = "logs"
-Log.render_every = 5000
+Log.render_every = 50000
+Log.save_every = 50000
 
 # scene size is in (-3.14, 3.14), set bbox as 4
 Hash.bbox = 4
@@ -43,4 +43,4 @@ Trainer.reg_dict = {
 Trainer.model_class = @NeuSModel
 Trainer.render = "neus"
 
-Log.exp_name = "dtu118-baby-neus"
+Log.exp_name = "dtu/dtu118-baby-neus"

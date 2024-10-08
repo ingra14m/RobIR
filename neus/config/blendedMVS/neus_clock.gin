@@ -1,5 +1,4 @@
 include "config/render.gin"
-include "config/env.gin"
 
 Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
 Data.dataset_dir = r"E:\Repository\data\\neus\data_BlendedMVS\bmvs_clock"
@@ -11,7 +10,8 @@ Data.alpha_as_mask = True
 Data.version = 'neus'
 
 Log.log_dir = "logs"
-Log.render_every = 5000
+Log.render_every = 50000
+Log.save_every = 50000
 
 # scene size is in (-3.14, 3.14), set bbox as 4
 Hash.bbox = 4
@@ -43,4 +43,4 @@ Trainer.reg_dict = {
 Trainer.model_class = @NeuSModel
 Trainer.render = "neus"
 
-Log.exp_name = "clock-neus"
+Log.exp_name = "blendedMVS/clock-neus"
