@@ -3,7 +3,7 @@ pillow~=9.1.1
 matplotlib~=3.5.2
 icecream~=2.1.2
 tqdm~=4.64.0
-imageio~=2.19.2
+imageio==2.27.0
 tensorboardX
 scipy
 icecream

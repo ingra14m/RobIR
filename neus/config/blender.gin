@@ -1,8 +1,7 @@
 include "config/render.gin"
-include "config/env.gin"
 
 Data.dataset_loader = 'blender'     # 'llff' for llff dataset
-Data.dataset_dir = %CHAIR_DATA_DIR
+Data.dataset_dir = '/media/data_nix/yzy/Git_Project/data/nerf_synthetic/hotdog/'
 Data.spherify = True
 
 Data.batch_size = 1024
@@ -11,7 +10,8 @@ Data.alpha_as_mask = True
 # Data.version = 'neus'             # 'naive' or 'neus', which dataloader implementation to use
 
 Log.log_dir = "logs"
-Log.render_every = 5000
+Log.render_every = 50000
+Log.save_every = 50000
 
 # scene size is in (-3.14, 3.14), set bbox as 4
 Hash.bbox = 4
@@ -43,4 +43,4 @@ Trainer.reg_dict = {
 Trainer.model_class = @NeuSModel
 Trainer.render = "neus"
 
-Log.exp_name = "chair-neus"
+Log.exp_name = "blender/hotdog-neus"
