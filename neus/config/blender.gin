@@ -1,7 +1,7 @@
 include "config/render.gin"
 
 Data.dataset_loader = 'blender'     # 'llff' for llff dataset
-Data.dataset_dir = '/media/data_nix/yzy/Git_Project/data/nerf_synthetic/hotdog/'
+Data.dataset_dir = 'your/path/to/hotdog/'  # Change to your own path
 Data.spherify = True
 
 Data.batch_size = 1024

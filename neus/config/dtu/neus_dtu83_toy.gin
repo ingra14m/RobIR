@@ -1,7 +1,7 @@
 include "config/render.gin"
 
 Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
-Data.dataset_dir = r"/home/cad3062/yzy/data/neus/data_DTU/dtu_scan83"
+Data.dataset_dir = r"your/path/to/scan83"
 Data.spherify = True
 
 Data.batch_size = 1024

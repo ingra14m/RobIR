@@ -30,9 +30,13 @@ We organize the datasets as follows:
 │     ├── truck
 │     ├── chessboard
 │     ├── ...
-│   | neus
+│   | blendedMVS
 │     ├── bear
-│     ├── sculpture
+│     ├── clock
+│     ├── ...
+│   | dtu
+│     ├── scan83
+│     ├── scan118
 │     ├── ...
 ```
 
@@ -60,7 +64,7 @@ pip install -r requirements.txt
 
 ```shell
 cd neus
-python exp_runner.py --gin_file config/blender.gin
+python exp_runner.py --gin_file config/blender.gin  # for blender dataset
 ```
 
 

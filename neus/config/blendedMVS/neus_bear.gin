@@ -1,7 +1,7 @@
 include "config/render.gin"
 
 Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
-Data.dataset_dir = r"D:\Git_Project\data\\neus\data_BlendedMVS\bmvs_bear"
+Data.dataset_dir = r"your/path/to/scan83/bmvs_bear"
 Data.spherify = True
 
 Data.batch_size = 1024
