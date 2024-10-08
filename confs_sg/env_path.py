@@ -1,10 +1,11 @@
 import os
 
 def set_path(path, iter=200000):
-    global NEUS_LOG_DIR, MESH_PATH, ENCODING
+    global NEUS_LOG_DIR, MESH_PATH, ENCODING, NEUS_ITER
     ENCODING = "PE"
     NEUS_LOG_DIR = path
     MESH_PATH = os.path.join(path, "meshes/mesh_{:06d}.ply".format(iter))
+    NEUS_ITER = iter
 
     print("Load Mesh from {}, using {} Encoding".format(MESH_PATH, ENCODING))
     # if "hotdog" in CONF:

@@ -767,7 +767,7 @@ class ImplicitNetworkMy(nn.Module):
             bgr=False
     ):
         super().__init__()
-        from confs_sg.env_path import NEUS_LOG_DIR, ENCODING
+        from confs_sg.env_path import NEUS_LOG_DIR, ENCODING, NEUS_ITER
 
         neus_kwargs = {
             "mode": "idr",
@@ -776,7 +776,7 @@ class ImplicitNetworkMy(nn.Module):
         }
 
         self.neus_model = NeuSModel(**neus_kwargs)
-        state = torch.load(os.path.join(NEUS_LOG_DIR, "200000.tar"), map_location=lambda x, i: x.cuda())
+        state = torch.load(os.path.join(NEUS_LOG_DIR, "{:06d}.tar".format(NEUS_ITER)), map_location=lambda x, i: x.cuda())
         step = state['global_step']
         self.neus_model.load_state_dict(state['model'], strict=False)
         Curve.stepping(self.neus_model, step)
