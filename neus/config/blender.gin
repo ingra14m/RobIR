@@ -43,4 +43,4 @@ Trainer.reg_dict = {
 Trainer.model_class = @NeuSModel
 Trainer.render = "neus"
 
-Log.exp_name = "blender/hotdog-neus"
+Log.exp_name = "blender/hotdog-neus"  # Change to your own exp name

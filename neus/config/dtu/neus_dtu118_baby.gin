@@ -1,7 +1,7 @@
 include "config/render.gin"
 
 Data.dataset_loader = 'blendermvs'     # 'llff' for llff dataset
-Data.dataset_dir = r"your/path/to/scan118"  # your own path
+Data.dataset_dir = r"your/path/to/scan118"  # Change to your own path
 Data.spherify = True
 
 Data.batch_size = 1024
@@ -43,4 +43,4 @@ Trainer.reg_dict = {
 Trainer.model_class = @NeuSModel
 Trainer.render = "neus"
 
-Log.exp_name = "dtu/dtu118-baby-neus"
+Log.exp_name = "dtu/dtu118-baby-neus"  # Change to your own exp name
