@@ -88,11 +88,7 @@ PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_sp
 **2.4 Train Reg-Estim**
 
 ```shell
-python training/exp_runner.py 
-          --conf confs_sg/hotdog.conf
-          --data_split_dir data/hotdog
-          --expname hotdog
-          --trainstage CESR
+PYTHONPATH=. python training/exp_runner.py --conf confs_sg/hotdog.conf --data_split_dir data/hotdog --expname hotdog --trainstage CESR
 ```
 
 

@@ -1,19 +1,19 @@
-HOTDOG_LOG_DIR = r"neus_pretrain/nerf-synthesis/hotdog-neus"
-TRUCK_LOG_PATH = r"neus_pretrain/blender-render/truck-neus"
+import os
 
-HOTDOG_MESH_PATH = r"neus_pretrain/nerf-synthesis/hotdog-neus/clean.ply"
-TRUCK_MESH_PATH = r"neus_pretrain/blender-render/truck-neus/clean.ply"
-
-
-def set_path(CONF):
+def set_path(path, iter=200000):
     global NEUS_LOG_DIR, MESH_PATH, ENCODING
-    if "hotdog" in CONF:
-        NEUS_LOG_DIR = HOTDOG_LOG_DIR
-        MESH_PATH = HOTDOG_MESH_PATH
-        ENCODING = "PE"
-    elif CONF == "truck":
-        NEUS_LOG_DIR = TRUCK_LOG_PATH
-        MESH_PATH = TRUCK_MESH_PATH
-        ENCODING = "PE"
-    else:
-        raise NotImplementedError
+    ENCODING = "PE"
+    NEUS_LOG_DIR = path
+    MESH_PATH = os.path.join(path, "meshes/mesh_{:06d}.ply".format(iter))
+
+    print("Load Mesh from {}, using {} Encoding".format(MESH_PATH, ENCODING))
+    # if "hotdog" in CONF:
+    #     NEUS_LOG_DIR = HOTDOG_LOG_DIR
+    #     MESH_PATH = HOTDOG_MESH_PATH
+    #     ENCODING = "PE"
+    # elif CONF == "truck":
+    #     NEUS_LOG_DIR = TRUCK_LOG_PATH
+    #     MESH_PATH = TRUCK_MESH_PATH
+    #     ENCODING = "PE"
+    # else:
+    #     raise NotImplementedError

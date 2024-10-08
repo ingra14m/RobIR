@@ -20,6 +20,8 @@ if __name__ == '__main__':
 
     parser.add_argument('--data_split_dir', type=str, default='')
     parser.add_argument('--frame_skip', type=int, default=1, help='skip frame when training')
+    parser.add_argument('--neus_pretrained_path', type=str, default='')
+    parser.add_argument('--mesh_pretrained_iter', type=int, default=200000)
 
     parser.add_argument('--batch_size', type=int, default=1, help='input batch size')
     parser.add_argument('--max_niter', type=int, default=200001, help='max number of iterations to train for')
@@ -38,7 +40,7 @@ if __name__ == '__main__':
 
     from confs_sg import env_path
 
-    env_path.set_path(opt.expname)
+    env_path.set_path(opt.neus_pretrained_path, opt.mesh_pretrained_iter)
 
     trainrunner = render_dict[opt.trainstage](conf=opt.conf,
                                               exps_folder_name=opt.exps_folder_name,
