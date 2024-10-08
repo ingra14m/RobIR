@@ -2,7 +2,7 @@ GPUtil
 argparse
 numpy
 pillow
-imageio
+imageio==2.27.0
 imageio-ffmpeg
 opencv-python
 pyhocon==0.3.59
